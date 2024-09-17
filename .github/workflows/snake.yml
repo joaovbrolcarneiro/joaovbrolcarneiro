@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight UTC
+    - cron: "0 0 * * *" # Runs at midnight every day
   workflow_dispatch:
 
 jobs:
@@ -10,24 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # Updated to v5 to avoid Node.js warnings
         with:
           python-version: '3.x'
 
-      - name: Generate Snake
-        uses: Platane/snk@v3.0.0
+      - name: Generate Snake Animation
+        uses: Platane/snk@v4.0.0 # Updated to v4 to ensure compatibility
         with:
           github_user_name: joaovbrolcarneiro
-
+          
       - name: Commit and Push Snake Animation
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }} # Use the token added to Secrets
         run: |
           git config --local user.name "joaovbrolcarneiro"
           git config --local user.email "your-email@example.com"
           git add dist/github-contribution-grid-snake.svg
-          git commit -m "Generated snake.svg"
+          git commit -m "Generated snake animation"
           git push
