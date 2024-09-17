@@ -2,7 +2,7 @@ name: Generate Snake
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
   workflow_dispatch:
 
 jobs:
@@ -10,16 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: Platane/snk@v2
+      # Update to use Node.js 16
+      - uses: actions/checkout@v3 # Update to v3 to use a newer version of Node.js
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Generate Snake
+        uses: Platane/snk@v3.0.0
         with:
           github_user_name: joaovbrolcarneiro
-          outputs: dist/snake.svg
+          svg_out_path: dist/snake.svg
 
-      - name: Commit and push
+      - name: Commit and Push Snake Animation
         run: |
           git config --local user.name "joaovbrolcarneiro"
           git config --local user.email "your-email@example.com"
-          git add -A
+          git add dist/snake.svg
           git commit -m "Generated snake.svg"
           git push
+
