@@ -10,11 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Update to use Node.js 16
-      - uses: actions/checkout@v3 # Update to v3 to use a newer version of Node.js
+      - uses: actions/checkout@v3 # Updated to v3
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v4 # Use Python 4 for the action
         with:
           python-version: '3.x'
 
@@ -22,7 +21,6 @@ jobs:
         uses: Platane/snk@v3.0.0
         with:
           github_user_name: joaovbrolcarneiro
-          svg_out_path: dist/snake.svg
 
       - name: Commit and Push Snake Animation
         run: |
@@ -31,4 +29,3 @@ jobs:
           git add dist/snake.svg
           git commit -m "Generated snake.svg"
           git push
-
