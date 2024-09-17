@@ -25,9 +25,20 @@ I'm a student at **42 Porto**, passionate about **C programming** and **Artifici
 ![Snake animation](https://github.com/joaovbrolcarneiro/joaovbrolcarneiro/blob/output/github-contribution-grid-snake.svg)
 
 ## 📝 Featured Projects
+
 Here are some of my favorite projects:
+
 - [Exercises in C](https://github.com/joaovbrolcarneiro/Exercises-in-C): Algorithms and functions in C.
 - [More projects coming soon!]
 
 ## 📫 Connect with Me
+
 - [LinkedIn](https://www.linkedin.com/in/joaovbrol)
+
+## 🎯 Achievements & Contributions
+
+- Contributed to various open-source projects.
+- Actively participating in the 42 Porto coding community.
+- Continuously learning and applying new programming concepts and technologies.
+
+Feel free to check out my repositories and connect with me!
