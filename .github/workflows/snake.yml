@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3 # Updated to v3
+      - uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v4 # Use Python 4 for the action
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
@@ -23,6 +23,8 @@ jobs:
           github_user_name: joaovbrolcarneiro
 
       - name: Commit and Push Snake Animation
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config --local user.name "joaovbrolcarneiro"
           git config --local user.email "your-email@example.com"
