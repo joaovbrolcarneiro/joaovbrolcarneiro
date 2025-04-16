@@ -1,6 +1,6 @@
 # Hi, I'm Joao 👋
 
-I'm a student at **42 Porto**, passionate about **C programming** and **Artificial Intelligence**. I have a degree in **Psychology**, but my love for problem-solving and coding led me to the world of programming.
+I'm a student at **42 Porto** and software developer at **Indelible Prophecy**, passionate about **C programming** and **Artificial Intelligence**. I have a degree in **Psychology**, but my love for problem-solving and coding led me to the world of programming.
 
 - 🔭 I’m currently working on improving my algorithms and C projects.
 - 🌱 I’m always learning about AI and how it intersects with other programming languages.
